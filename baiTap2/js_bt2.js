@@ -1,13 +1,25 @@
+// check isNumber
+function isNumber(n) {
+  let reg = /^-?[\d.]+(?:e-?\d+)?$/;
+  if (reg.test(n) && typeof n === "number") {
+    return true;
+  }
+  return false;
+}
+
 // bài 1: Viết hàm với tham số đầu vào là 1 số bất kỳ, kiểm tra và in ra màn hình là số chẵn hay lẽ.
 
 function checkParity(number) {
   let result = false;
-  if (number % 2 == 0) {
-    result = true;
-  } else if (number % 2 != 0) {
-    result = false;
+  if (isNumber(number)) {
+    if (number % 2 == 0) {
+      result = true;
+    } else {
+      result = false;
+    }
+  } else {
+    result = "Không phải số";
   }
-
   return result;
 }
 
@@ -78,39 +90,35 @@ function checkInteger(number) {
 
 // bài 4: Viết hàm tính tổng 2 số với tất cả các phép tính (+ - * / %) thông qua tham số truyền vào
 
-function isNumber(n) {
-    let reg = /^-?[\d.]+(?:e-?\d+)?$/;
-    if(reg.test(n) && (typeof n === "number") ){
-        return true;
-    }
-  return false;
-}
-
 function pussNumber(...args) {
   let result = "";
-  if (isNumber(args[0]) && isNumber(args[1] )) {
-    switch (args[args.length - 1]) {
-      case "+":
-        result = args[0] + args[1];
-        break;
-      case "-":
-        result = args[0] - args[1];
-        break;
-      case "*":
-        result = args[0] * args[1];
-        break;
-      case "/":
-        result = args[0] / args[1];
-        break;
-      case "%":
-        result = args[0] % args[1];
-        break;
-      default:
-        result = " Phép tính sai ";
-        break;
+  if (args.length == 3) {
+    if (isNumber(args[0]) && isNumber(args[1])) {
+      switch (args[args.length - 1]) {
+        case "+":
+          result = args[0] + args[1];
+          break;
+        case "-":
+          result = args[0] - args[1];
+          break;
+        case "*":
+          result = args[0] * args[1];
+          break;
+        case "/":
+          result = args[0] / args[1];
+          break;
+        case "%":
+          result = args[0] % args[1];
+          break;
+        default:
+          result = " Phép tính sai ";
+          break;
+      }
+    } else {
+      result = "Không phải số";
     }
   } else {
-    result = "Không phải số";
+    result = "Hãy nhập 3 tham số";
   }
 
   return result;
