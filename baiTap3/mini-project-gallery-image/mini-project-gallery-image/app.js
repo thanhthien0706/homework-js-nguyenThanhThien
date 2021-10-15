@@ -70,7 +70,7 @@ window.onscroll = function(event) {
 function changeCustom() {
   let rangeCustom = document.querySelectorAll("input[type='range']");
   rangeCustom.forEach(element => {
-    element.addEventListener("change", (event) => {
+    element.addEventListener("input", (event) => {
       let c1 = document.querySelector("#color_1").value;
       let c2 = document.querySelector("#color_2").value;
       let c3 = document.querySelector("#color_3").value;
