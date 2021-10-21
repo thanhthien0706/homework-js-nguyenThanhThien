@@ -16,7 +16,7 @@
   cursor: pointer;
 }
 
-.modal {
+.modal_new {
   background-color: rgba(53, 194, 18, 0.384);
   position: fixed;
   top: 0;
@@ -42,7 +42,30 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
-.modal.open {
+.modal_new.open {
   opacity: 1;
   pointer-events: all;
+}
+
+/* Box Color */
+.box_show_change{
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.box_show_color{
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  margin-left: 100px;
+}
+
+.hover_show{
+  background-color: black;
+}
+
+.hover_show:hover{
+  top: 0!important;
+  background-color: black!important;
+  /* background-color: red; */
 }
