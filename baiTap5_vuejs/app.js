@@ -83,8 +83,8 @@ const appNew = Vue.createApp({
     };
   },
   methods: {
-    isClickShow(event) {
-      this.imageModalShow = `img/full/${event.target.alt}.jpg`;
+    isClickShow(imageAlt) {
+      this.imageModalShow = `img/full/${imageAlt}.jpg`;
       this.isOpenClass = !this.isOpenClass;
     },
     closeModal(event) {
@@ -115,10 +115,6 @@ const appNew = Vue.createApp({
       this.color1 = v1;
       this.color2 = v2;
       this.color3 = v3;
-
-      this.$refs.color_1.value = v1;
-      this.$refs.color_2.value = v2;
-      this.$refs.color_3.value = v3;
     },
   },
   computed: {

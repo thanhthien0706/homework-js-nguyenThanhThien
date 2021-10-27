@@ -25,10 +25,10 @@
       </ul>
     </nav>
 
-    <section class="gallery" >
+    <section class="gallery">
       <!-- Image 1 -->
       <div class="img-container" v-for="imageBox in imageBoxs">
-        <img :src="imageBox.imageIndex" :alt="imageBox.imageAlt"  @click="isClickShow" />
+        <img :src="imageBox.imageIndex" :alt="imageBox.imageAlt" @click="isClickShow(imageBox.imageAlt)" />
       </div>
     </section>
 
@@ -38,21 +38,24 @@
     </div>
 
     <div class="box_item_scroll">
-      <div id="sectionGallery" ref="sectionGallery" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
+      <div id="sectionGallery" ref="sectionGallery" class="container-fluid bg-success"
+        style="padding-top:70px;padding-bottom:70px">
         <h1>Gallery</h1>
         <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
           look at the navigation bar while scrolling!</p>
         <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
           look at the navigation bar while scrolling!</p>
       </div>
-      <div id="sectionBooks" ref="sectionBooks" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
+      <div id="sectionBooks" ref="sectionBooks" class="container-fluid bg-warning"
+        style="padding-top:70px;padding-bottom:70px">
         <h1>Books</h1>
         <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
           look at the navigation bar while scrolling!</p>
         <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
           look at the navigation bar while scrolling!</p>
       </div>
-      <div id="sectionStudents" ref="sectionStudents" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
+      <div id="sectionStudents" ref="sectionStudents" class="container-fluid bg-secondary"
+        style="padding-top:70px;padding-bottom:70px">
         <h1>Students</h1>
         <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
           look at the navigation bar while scrolling!</p>
@@ -62,7 +65,7 @@
       <div id="sectionColors" class="container-fluid bg-while" style="padding-top:70px;padding-bottom:70px">
         <h1>Colors</h1>
         <div class="row box_show_change">
-          <p class="text_color" >Tet show color: </p>
+          <p class="text_color">Tet show color: </p>
           <div class="box_show_color" :style="changeColorShow"></div>
         </div>
         <div class="box_change">
@@ -70,15 +73,16 @@
           <div class="box_color">
             <p class="font-weight-bold">Chuyển đổi tùy chọn</p>
             <label for="color_1">Color 1</label>
-            <input @input="changeCustom" type="range" min="0" max="255" value="0"id="color_1" ref="color_1" name="points1">
+            <input @input="changeCustom" type="range" min="0" max="255" :value="color1" id="color_1" name="points1">
+
           </div>
           <div class="box_color">
             <label for="color_2">Color 2</label>
-            <input @input="changeCustom" type="range" min="0" max="255" value="0"id="color_2" ref="color_2" name="points2">
+            <input @input="changeCustom" type="range" min="0" max="255" :value="color2" id="color_2" name="points2">
           </div>
           <div class="box_color">
             <label for="color_3">Color 3</label>
-            <input @input="changeCustom" type="range" min="0" max="255" value="0"id="color_3" ref="color_3" name="points3">
+            <input @input="changeCustom" type="range" min="0" max="255" :value="color3" id="color_3" name="points3">
           </div>
           <div class="box_btn_change">
             <p class="font-weight-bold">Chuyển đổi ngẫu nhiên</p>
